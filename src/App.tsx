@@ -1,54 +1,73 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
+const styles = {
+  containerMain: {
+    textAlign: "center",
+    backgroundColor: "#FFE5E5", 
+    fontFamily:"Gill Sans, sans-serif",
+    padding:'1rem'
+  },
+  containerHeader: {
+    padding: "50px",
+    backgroundColor: "#A8DF8E",
+  },
+  containerIndex: {
+    textAlign: "left",
+    padding: "50px",
+    backgroundColor: "#F3FDE8",
+  },
+  header: {
+    fontSize: "36px",
+    fontWeight: "bold",
+  },
+  subHeader: {
+    fontSize: "24px",
+  },
+  button: {
+    padding: "15px 30px",
+    fontSize: "18px",
+    backgroundColor: "#007bff",
+    color: "white",
+    border: "none",
+    borderRadius: "5px",
+    cursor: "pointer",
+  },
+  link: {
+    textDecoration: "none",
+    color: "white",
+  },
+};
 
-import { DummyComponent, ComponentDummy } from "./components/mocks";
-import { VerySlowComponent } from "./components/very-slow-component";
-import { MovingBlock } from "./components/MovingBlock";
-// import { ScrollableWithMovingBlock } from "./components/ScrollableWithMovingBlock";
-import "./styles.scss";
-
-
-// ⚠️ hard-coded solo para mostrar el problema de los re-renders
-const getPosition = (val: number) => 150 - val / 2;
-
-// ⚠️ Con cada scroll se disparará un re-render
-export default function App() {
-  const [position, setPosition] = React.useState(150);
-
-  const onScroll = (e: any) => {
-    // calcula la posición en función del valor desplazado
-    const calculated = getPosition(e.target.scrollTop);
-    // guardarlo en estado
-    setPosition(calculated);
-  };
-
+const App = () => {
   return (
-    <div className="scrollable-block" onScroll={onScroll}>
-      {/* pasa valor de posición al nuevo componente móvil */}
-      <MovingBlock position={position} />
-      <VerySlowComponent />
-      <DummyComponent />
-      <ComponentDummy />
+    <div style={styles.containerMain}>
+      <div style={styles.containerHeader}>
+        <h1 style={styles.header}>Taller de React Performance</h1>
+        <p style={styles.subHeader}>
+          Aprende a optimizar tus aplicaciones React
+        </p>
+        <p>Fecha: 21 de septiembre, 2023</p>
+        <p>Lugar: Sala Virtual</p>
+        <p>Instructor: Julio Leiva</p>
+        <button style={styles.button}>
+          <a
+            style={styles.link}
+            href="https://github.com/julioleiva/curso-react-performance"
+          >
+            Repo
+          </a>
+        </button>
+      </div>
+      <div style={styles.containerIndex}>
+        <h2>Introducción a los re-renders</h2>
+        <h2>Elementos, hijos como props y re-renders</h2>
+        <h2>Problemas de configuración con elementos como 
+          
+        </h2>
+        <h2>Configuración avanzada con render props</h2>
+        <h2>Memoización con useMemo, useCallback y React.memo</h2>
+        <h2>Profundizando en diffing y reconciliation</h2>
+      </div>
     </div>
   );
-}
+};
 
-// 👌 Ahora, sobre la actualización del estado y la situación de los re-renderizados:
-// Si se dispara una actualización del estado, volveremos a desencadenar un re-renderizado 
-// de un componente, como de costumbre. 
-// Solo afecta el componente ScrollableWithMovingBlock - solo un div con un
-// bloque móvil. El resto de los componentes lentos se pasan a través de
-// props, están fuera de ese componente. 
-
-// export const App = () => {
-//   const slowComponents = (
-//     <>
-//       <VerySlowComponent />
-//       <DummyComponent />
-//       <ComponentDummy />
-//     </>
-//   );
-//   return <ScrollableWithMovingBlock content={slowComponents} />;
-// };
-
-
+export default App;
