@@ -4,9 +4,9 @@ import { Button } from './components/button';
 import { DummyComponent, ComponentDummy } from './components/mocks';
 import { VerySlowComponent } from './components/very-slow-component';
 import { useModalDialog } from './hooks/useModalDialog';
+// import { ButtonWithModalDialog } from './components/button-with-modal-dialog';
 
 import './styles.scss';
-import { ButtonWithModalDialog } from './components/button-with-modal-dialog';
 
 
 // ⚠️
