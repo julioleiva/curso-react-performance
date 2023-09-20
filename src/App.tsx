@@ -45,26 +45,25 @@ const App = () => {
           Aprende a optimizar tus aplicaciones React
         </p>
         <p>Fecha: 21 de septiembre, 2023</p>
-        <p>Lugar: Sala Virtual</p>
-        <p>Instructor: Julio Leiva</p>
         <button style={styles.button}>
           <a
             style={styles.link}
             href="https://github.com/julioleiva/curso-react-performance"
           >
-            Repo
+            GitHub Repo {'>>>'}
           </a>
         </button>
       </div>
       <div style={styles.containerIndex}>
-        <h2>Introducción a los re-renders</h2>
-        <h2>Custom hooks y re-renders</h2>
-        <h2>Custom hooks y Api Context</h2>
-        <h2>Elementos, hijos como props y re-renders</h2>
-        <h2>Problemas de configuración con elementos como</h2>
-        <h2>Configuración avanzada con render props</h2>
-        <h2>Memoización con useMemo, useCallback y React.memo</h2>
-        <h2>Profundizando en diffing y reconciliation</h2>
+        <h2>⒈ Introducción a los re-renders</h2>
+        <h2>⒉Custom hooks y re-renders</h2>
+        <h2>⒊Api Context y re-renders</h2>
+        <h2>⒋Listas y re-renders</h2>
+        <h2>⒌Elementos, hijos como props y re-renders</h2>
+        <h2>⒍Problemas de configuración con elementos como</h2>
+        <h2>⒎Configuración avanzada con render props</h2>
+        <h2>🎱Memoización con useMemo, useCallback y React.memo</h2>
+        <h2>⒐Profundizando en diffing y reconciliation</h2>
       </div>
     </div>
   );
