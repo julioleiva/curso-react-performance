@@ -58,10 +58,10 @@ const App = () => {
       </div>
       <div style={styles.containerIndex}>
         <h2>Introducción a los re-renders</h2>
+        <h2>Custom hooks y re-renders</h2>
+        <h2>Custom hooks y Api Context</h2>
         <h2>Elementos, hijos como props y re-renders</h2>
-        <h2>Problemas de configuración con elementos como 
-          
-        </h2>
+        <h2>Problemas de configuración con elementos como</h2>
         <h2>Configuración avanzada con render props</h2>
         <h2>Memoización con useMemo, useCallback y React.memo</h2>
         <h2>Profundizando en diffing y reconciliation</h2>
