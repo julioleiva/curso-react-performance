@@ -49,8 +49,6 @@ Las personas con experiencia en la gestión del rendimiento de React podrían es
 
 Pero primero, repasemos qué es lo que está ocurriendo exactamente aquí y por qué.
 
-Claro, aquí tienes la traducción al español del texto:
-
 ## Moviendo el estado hacia abajo  
 Ahora que está claro cómo React vuelve a renderizar los componentes, es hora de aplicar este conocimiento al problema original y solucionarlo. Echemos un vistazo más de cerca al código, en particular donde usamos el estado del diálogo modal:
 
