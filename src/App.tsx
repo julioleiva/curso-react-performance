@@ -1,71 +1,46 @@
-const styles = {
-  containerMain: {
-    textAlign: "center",
-    backgroundColor: "#FFE5E5", 
-    fontFamily:"Gill Sans, sans-serif",
-    padding:'1rem'
-  },
-  containerHeader: {
-    padding: "50px",
-    backgroundColor: "#A8DF8E",
-  },
-  containerIndex: {
-    textAlign: "left",
-    padding: "50px",
-    backgroundColor: "#F3FDE8",
-  },
-  header: {
-    fontSize: "36px",
-    fontWeight: "bold",
-  },
-  subHeader: {
-    fontSize: "24px",
-  },
-  button: {
-    padding: "15px 30px",
-    fontSize: "18px",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-  link: {
-    textDecoration: "none",
-    color: "white",
-  },
+import React from "react";
+import "./styles.css";
+
+const Child = ({ value }: { value: number }) => {
+  console.log("Child re-renders", value);
+  return <div>{value}</div>;
 };
 
+const values = [...Array(100000).keys()];
+
+const ChildMemo = React.memo(Child);
+
 const App = () => {
+  const [state, setState] = React.useState(1);
+
+  const onClick = () => {
+    setState(state + 1);
+  };
+
   return (
-    <div style={styles.containerMain}>
-      <div style={styles.containerHeader}>
-        <h1 style={styles.header}>Taller de React Performance</h1>
-        <p style={styles.subHeader}>
-          Aprende a optimizar tus aplicaciones React
-        </p>
-        <p>Fecha: 21 de septiembre, 2023</p>
-        <button style={styles.button}>
-          <a
-            style={styles.link}
-            href="https://github.com/julioleiva/curso-react-performance"
-          >
-            GitHub Repo {'>>>'}
-          </a>
-        </button>
-      </div>
-      <div style={styles.containerIndex}>
-        <h2>⒈ Introducción a los re-renders</h2>
-        <h2>⒉Custom hooks y re-renders</h2>
-        <h2>⒊Api Context y re-renders</h2>
-        <h2>⒋Listas y re-renders</h2>
-        <h2>⒌Elementos, hijos como props y re-renders</h2>
-        <h2>⒍Problemas de configuración con elementos como</h2>
-        <h2>⒎Configuración avanzada con render props</h2>
-        <h2>🎱Memoización con useMemo, useCallback y React.memo</h2>
-        <h2>⒐Profundizando en diffing y reconciliation</h2>
-      </div>
-    </div>
+    <>
+      <h2>Abre la consola y aprieta el botón 🐭</h2>
+      <p>Listas estáticas con índice e id como clave</p>
+      <p>Los hijos no deben volver a renderizarse</p>
+      <p>
+        Si no envolvemos el componente hijo con React.memo volverán a
+        renderizarse
+      </p>
+
+      <button onClick={onClick}>click here {state}</button>
+      <br />
+      <br />
+
+      {values.map((val, index) => (
+        <ChildMemo value={val} key={index} />
+      ))}
+      <br />
+      <br />
+
+      {values.map((val) => (
+        <ChildMemo value={val} key={val} />
+      ))}
+    </>
   );
 };
 
