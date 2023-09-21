@@ -1,21 +1,26 @@
+import {IconBrandReact} from '@tabler/icons-react'
+import { Icons } from './icons/icons';
+
+
 const styles = {
   containerMain: {
     textAlign: "center",
-    backgroundColor: "#FFE5E5", 
-    fontFamily:"Gill Sans, sans-serif",
-    padding:'1rem'
+    backgroundColor: "#F3FDE8",
+    fontFamily: "Gill Sans, sans-serif",
+    padding: "1rem",
+    borderRadius:'1rem'
   },
   containerHeader: {
     padding: "50px",
     backgroundColor: "#A8DF8E",
+    borderRadius:'1rem'
   },
   containerIndex: {
     textAlign: "left",
     padding: "50px",
-    backgroundColor: "#F3FDE8",
   },
   header: {
-    fontSize: "36px",
+    fontSize: "45px",
     fontWeight: "bold",
   },
   subHeader: {
@@ -24,7 +29,7 @@ const styles = {
   button: {
     padding: "15px 30px",
     fontSize: "18px",
-    backgroundColor: "#007bff",
+    backgroundColor: "purple",
     color: "white",
     border: "none",
     borderRadius: "5px",
@@ -40,17 +45,23 @@ const App = () => {
   return (
     <div style={styles.containerMain}>
       <div style={styles.containerHeader}>
-        <h1 style={styles.header}>Taller de React Performance</h1>
+        <h1 style={styles.header}>  <IconBrandReact color='purple' size={48}/>Taller de React Performance <IconBrandReact color='purple' size={48}/> </h1>
         <p style={styles.subHeader}>
-          Aprende a optimizar tus aplicaciones React
+          Aprende a optimizar tus aplicaciones evitando re-renders innecesarios
         </p>
         <p>Fecha: 21 de septiembre, 2023</p>
+        <p>
+          Julio Leiva Díaz{"  "}
+        </p>
+        <p>
+          <Icons/>
+        </p>
         <button style={styles.button}>
           <a
             style={styles.link}
             href="https://github.com/julioleiva/curso-react-performance"
           >
-            GitHub Repo {'>>>'}
+            GitHub Repo {">>>"}
           </a>
         </button>
       </div>
