@@ -206,3 +206,4 @@ No hay forma de evitar que un componente que usa una porción del valor del Cont
 Sin embargo, los selectores de Contexto podrían simularse con el uso de componentes de orden superior y React.memo.
 
 ![context selectors](https://www.developerway.com/assets/react-re-renders-guide/part7-context-selectors.png)
+
