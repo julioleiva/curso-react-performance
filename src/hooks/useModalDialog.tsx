@@ -3,7 +3,7 @@ import { useResizeDetector } from "./useResizeDetector";
 
 export const useModalDialog = () => {
     const [isOpen, setIsOpen] = React.useState(false);
-    // I don't even use it, just call it here
+    // Ni siquiera lo usamos, sólo lo invocamos pero su estado ya nos afecta
     useResizeDetector();
   
     return {
