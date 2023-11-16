@@ -26,6 +26,12 @@ const styles = {
   subHeader: {
     fontSize: "24px",
   },
+
+ topicList: {
+  fontSize: '24px',
+  marginBottom: '1rem'
+ },
+
   button: {
     padding: "15px 30px",
     fontSize: "18px",
@@ -41,6 +47,17 @@ const styles = {
   },
 };
 
+const topics: string[] = [
+  "Introducción a los re-renders",
+  "Patrones de composición 1: 'Moviendo el estado hacia abajo'",
+  "Patrones de composición 2: 'Pasar componentes como props'",
+  "Patrones de composición 3: 'Usar children como props'",
+  "Memorización con useMemo, useCallback y React.memo",
+  "Custom hooks y re-renders",
+  "Listas y re-renders"
+];
+
+
 const App = () => {
   return (
     <div style={styles.containerMain}>
@@ -49,7 +66,7 @@ const App = () => {
         <p style={styles.subHeader}>
           Aprende a optimizar tus aplicaciones evitando re-renders innecesarios
         </p>
-        <p>Fecha: 21 de septiembre, 2023</p>
+        <p>Fechas: 9 y 16 de noviembre de 2023 </p>
         <p>
           Julio Leiva Díaz{"  "}
         </p>
@@ -66,11 +83,11 @@ const App = () => {
         </button>
       </div>
       <div style={styles.containerIndex}>
-        <h2>⒈ Introducción a los re-renders</h2>
-        <h2>⒉ Custom hooks y re-renders</h2>
-        <h2>⒊ Api Context y re-renders</h2>
-        <h2>⒋ Listas y re-renders</h2>
-        <h2>⒌ Elementos, hijos como props y re-renders</h2>
+        <ol>
+          {topics.map((topic) => {
+            return <li key={topic} style={styles.topicList}>{topic}</li>
+          })}
+        </ol>
       </div>
     </div>
   );
