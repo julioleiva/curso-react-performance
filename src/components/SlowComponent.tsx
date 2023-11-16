@@ -5,7 +5,7 @@ const wait = (ms: number) => {
   while (now - start < ms) now = Date.now();
 };
 
-export const VerySlowComponent = () => {
+export const SlowComponent = () => {
   wait(500);
   return null;
 };
