@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
-import { ModalDialog } from './components/basic-modal-dialog';
-import { Button } from './components/button';
-import { DummyComponent, ComponentDummy } from './components/mocks';
-import { VerySlowComponent } from './components/very-slow-component';
-// import { ButtonWithModalDialog } from './components/button-with-modal-dialog';
+import { ModalDialog } from './components/ModalDialog';
+import { Button } from './components/Button';
+import { DummyComponent } from './components/DummyComponent';
+import { VerySlowComponent } from './components/SlowComponent';
 
 import './styles.scss';
 
@@ -17,20 +16,6 @@ export default function App() {
       {isOpen ? <ModalDialog onClose={() => setIsOpen(false)} /> : null}
       <VerySlowComponent />
       <DummyComponent />
-      <ComponentDummy />
     </>
   );
 }
-
-// 👌
-// export default function App(){
-//   return (
-//     <div className="layout">
-//       {/* componente con el estado dentro y aislado de la App principal */}
-//       <ButtonWithModalDialog />
-//       <VerySlowComponent />
-//       <DummyComponent />
-//       <ComponentDummy />
-//     </div>
-//   );
-// }

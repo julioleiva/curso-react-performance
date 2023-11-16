@@ -1,10 +1,11 @@
-import { Button } from './button';
+import { Button } from "./Button";
 
-type BasicModalDialogProps = {
+
+type ModalDialogProps = {
   onClose: () => void;
 };
 
-export const ModalDialog = ({ onClose }: BasicModalDialogProps) => {
+export const ModalDialog = ({ onClose }: ModalDialogProps) => {
   return (
     <div className="modal-dialog">
       <div className="content">modal content</div>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "./button";
-import { ModalDialog } from "./basic-modal-dialog";
+import { Button } from "./Button";
+import { ModalDialog } from "./ModalDialog";
 
 
 export const ButtonWithModalDialog = () => {

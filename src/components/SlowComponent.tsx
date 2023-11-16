@@ -9,8 +9,3 @@ export const VerySlowComponent = () => {
   wait(500);
   return null;
 };
-
-export const AnotherVerySlowComponent = () => {
-  wait(500);
-  return null;
-};
