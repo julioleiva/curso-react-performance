@@ -2,14 +2,15 @@ import { ReactNode, useState } from "react";
 import MovingBlock from "./MovingBlock";
 
 type ScrollableWithMovingBlockProps = {
-  content: ReactNode;
+  children: ReactNode;
 };
 
 // sólo una aproximación para demostrar el problema de las re-renders no utilizar en código real
 const getPosition = (val: number) => 150 - val / 2;
 
+
 function ScrollableWithMovingBlock({
-  content,
+  children,
 }: ScrollableWithMovingBlockProps) {
   const [position, setPosition] = useState(300);
 
@@ -21,7 +22,7 @@ function ScrollableWithMovingBlock({
   return (
     <div className="scrollable-block" onScroll={onScroll}>
       <MovingBlock position={position} />
-      {content}
+      {children}
     </div>
   );
 }
